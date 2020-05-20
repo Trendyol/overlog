@@ -57,6 +57,14 @@ func main() {
 
 #### Audition middleware example for echo
 ```go
+func main() {
+	...
+	over.NewDefault()
+	over.SetGlobalFields([]string{"x-agent-name", "x-correlation-id"})
+	...
+}
+```
+```go
 func AuditionPreHandler(next echo.HandlerFunc) echo.HandlerFunc {
     return func(c echo.Context) error {
         var agentName = c.Request().Header.Get("x-agent-name")
