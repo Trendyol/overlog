@@ -1,4 +1,4 @@
-module overlog
+module github.com/Trendyol/overlog
 
 go 1.14
 
