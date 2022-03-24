@@ -34,6 +34,7 @@ func NewDefault() *Overlog {
 	zerolog.LevelFieldMarshalFunc = UppercaseLevelEncoder()
 	zerolog.CallerMarshalFunc = ShortCallerEncoder()
 	zerolog.CallerFieldName = "source"
+	zerolog.CallerSkipFrameCount = 3
 
 	overLogger = &Overlog{
 		log: &log.Logger,
