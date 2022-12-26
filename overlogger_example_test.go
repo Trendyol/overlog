@@ -1,6 +1,7 @@
 package over
 
 import (
+	"errors"
 	"github.com/rs/zerolog"
 	"os"
 )
@@ -101,7 +102,7 @@ func ExampleOverlog_Error() {
 	MDC().Set("x-correlation-id", "1234")
 	AddGlobalFields("x-correlation-id")
 
-	Log().Error("hello world")
+	Log().Error(errors.New("hello world"))
 
 	// Output: {"level":"error","x-correlation-id":"1234","message":"hello world"}
 }
@@ -111,7 +112,7 @@ func ExampleOverlog_Errorf() {
 	MDC().Set("x-correlation-id", "1234")
 	AddGlobalFields("x-correlation-id")
 
-	Log().Errorf("hello %s", "world")
+	Log().Errorf("hello %s", errors.New("world"))
 
 	// Output: {"level":"error","x-correlation-id":"1234","message":"hello world"}
 }
