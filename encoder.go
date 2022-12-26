@@ -36,14 +36,14 @@ func UppercaseLevelEncoder() func(l zerolog.Level) string {
 	}
 }
 
-func FullCallerEncoder() func(file string, line int) string {
-	return func(file string, line int) string {
+func FullCallerEncoder() func(pc uintptr, file string, line int) string {
+	return func(pc uintptr, file string, line int) string {
 		return file + ":" + strconv.Itoa(line)
 	}
 }
 
-func ShortCallerEncoder() func(file string, line int) string {
-	return func(file string, line int) string {
+func ShortCallerEncoder() func(pc uintptr, file string, line int) string {
+	return func(pc uintptr, file string, line int) string {
 		return TrimmedPath(file) + ":" + strconv.Itoa(line)
 	}
 }
