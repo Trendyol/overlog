@@ -1,3 +1,5 @@
+
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Trendyol/overlog/badge)](https://scorecard.dev/viewer/?uri=github.com/Trendyol/overlog)
 # Overlog
 _Golang Logging with **Mapped Diagnostic Context**_
 
